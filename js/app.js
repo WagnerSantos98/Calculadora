@@ -1,81 +1,90 @@
 let outScreen = document.querySelector('.output input');
 mode = 'calc';
 
-function insert(num){
-    outScreen.value += num;
-    if(mode == 'equal'){
-        outScreen.value = '';
-        outScreen.value += num;
-        mode = 'calc';
-    }
-}
-
-function clr(){
+function insert(num) {
+  outScreen.value += num;
+  if (mode == 'equal') {
     outScreen.value = '';
-}
+    outScreen.value += num;
+    mode = 'calc';
+  };
+};
 
-function del(){
-    outScreen.value = outScreen.value.slice(0, -1);
-    if(mode == 'equal'){
-        outScreen.value = '';
-    }
-}
+function clr() {
+  outScreen.value = '';
+};
 
-function calc(){
-    try{
-        outScreen.value = eval(outScreen.value);
-        mode = 'equal';
-    }catch (err){
-        outScreen.value = 'INVÁLIDO';
-        mode = 'equal';
-    }
-}
+function del() {
+  outScreen.value = outScreen.value.slice(0, -1);
+  if (mode == 'equal') {
+    outScreen.value = '';
+  };
+};
 
-let menuIcon = document.querySelector('.icon');
-menu = document.querySelector('.menu');
+function calc() {
+  try {
+    outScreen.value = eval(outScreen.value);
+    mode = 'equal';
+  } catch (err) {
+    outScreen.value = 'INVALID';
+    mode = 'equal';
+  };
+};
 
-menuIcon.onclick = function(){
-    menu.classList.toogle('open');
-}
+let menuIcon = document.querySelector('.icon'),
+  menu = document.querySelector('.menu');
 
-let blueTheme = document.querySelector('.blue');
-let orangeTheme = document.querySelector('.orange');
-let redTheme = document.querySelector('.red');
-let purpleTheme = document.querySelector('.purple');
-let pinkTheme = document.querySelector('.pink');
+menuIcon.onclick = function() {
+  menu.classList.toggle('open');
+};
 
-blueTheme.onclick = function(){
-    document.body.classList.remove('orange');
-    document.body.classList.remove('red');
-    document.body.classList.remove('purple');
-    document.body.classList.remove('pink');
-    document.body.classList.add('blue');
-    menu.classList.remove('open');
-}
+let blueTheme = document.querySelector('.blue'),
+  orangeTheme = document.querySelector('.orange'),
+  redTheme = document.querySelector('.red'),
+  purpleTheme = document.querySelector('.purple'),
+  pinkTheme = document.querySelector('.pink');
 
-orangeTheme.onclick = function(){
-    document.body.classList.remove('blue');
-    document.body.classList.remove('red');
-    document.body.classList.remove('purple');
-    document.body.classList.remove('pink');
-    document.body.classList.add('orange');
-    menu.classList.remove('open');
-}
+blueTheme.onclick = function() {
+  document.body.classList.remove('orange');
+  document.body.classList.remove('red');
+  document.body.classList.remove('purple');
+  document.body.classList.remove('pink');
+  document.body.classList.add('blue');
+  menu.classList.remove('open');
+};
 
-redTheme.onclick = function(){
-    document.body.classList.remove('orange');
-    document.body.classList.remove('blue');
-    document.body.classList.remove('purple');
-    document.body.classList.remove('pink');
-    document.body.classList.add('red');
-    menu.classList.remove('open');
-}
+orangeTheme.onclick = function() {
+  document.body.classList.remove('blue');
+  document.body.classList.remove('red');
+  document.body.classList.remove('purple');
+  document.body.classList.remove('pink');
+  document.body.classList.add('orange');
+  menu.classList.remove('open');
+};
 
-pinkTheme.onclick = function(){
-    document.body.classList.remove('orange');
-    document.body.classList.remove('red');
-    document.body.classList.remove('purple');
-    document.body.classList.remove('blue');
-    document.body.classList.add('pink');
-    menu.classList.remove('open');
-}
+redTheme.onclick = function() {
+  document.body.classList.remove('orange');
+  document.body.classList.remove('blue');
+  document.body.classList.remove('purple');
+  document.body.classList.remove('pink');
+  document.body.classList.add('red');
+  menu.classList.remove('open');
+};
+
+purpleTheme.onclick = function() {
+  document.body.classList.remove('orange');
+  document.body.classList.remove('red');
+  document.body.classList.remove('blue');
+  document.body.classList.remove('pink');
+  document.body.classList.add('purple');
+  menu.classList.remove('open');
+};
+
+pinkTheme.onclick = function() {
+  document.body.classList.remove('orange');
+  document.body.classList.remove('red');
+  document.body.classList.remove('purple');
+  document.body.classList.remove('blue');
+  document.body.classList.add('pink');
+  menu.classList.remove('open');
+};
